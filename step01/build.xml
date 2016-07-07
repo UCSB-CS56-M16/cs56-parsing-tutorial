@@ -32,14 +32,6 @@
   <target name="run" depends="jar" description="run the main">
     <java jar="${jar.file}" fork="true"/>
   </target>
-
-  <target name="run-fuzzer" depends="jar" description="run the main appropriate for fuzzing">
-    <java classname="edu.ucsb.cs56.pconrad.parsing.fuzzer.Main" fork="true">
-      <classpath>
-	<pathelement location="${jar.file}"/>
-      </classpath>
-    </java>
-  </target>
   
   <target name="test" depends="compile" description="run JUnit tests">
     <junit haltonerror="no" haltonfailure="no">
