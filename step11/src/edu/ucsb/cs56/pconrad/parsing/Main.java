@@ -11,23 +11,38 @@ public class Main {
 	throws TokenizerException, ParserException, EvaluatorException {
 	return DefaultInterpreterInterface.DEFAULT.tokenizeParseAndEvaluate(input);
     }
-    
-    public static void handleInput(final String input) {
-	try {
-	    System.out.println(evaluate(input));
-	} catch (TokenizerException e) {
-	    System.out.println("Failed to tokenize: " + e.getMessage());
-	} catch (ParserException e) {
-	    System.out.println("Failed to parse: " + e.getMessage());
-	} catch (EvaluatorException e) {
-	    System.out.println("Failed to evaluate: " + e.getMessage());
-	}
+
+    /**
+     * Returns true if it should exit
+     */
+    public static boolean shouldExit(final String input) {
+        final String trimmed = input.trim();
+        return trimmed.equals("q") || trimmed.equals("quit");
+    }
+
+    /**
+     * Returns true if it should exit
+     */
+    public static boolean handleInput(final String input) {
+        if (shouldExit(input)) {
+            return true;
+        } else {
+            try {
+                System.out.println(evaluate(input));
+            } catch (TokenizerException e) {
+                System.out.println("Failed to tokenize: " + e.getMessage());
+            } catch (ParserException e) {
+                System.out.println("Failed to parse: " + e.getMessage());
+            } catch (EvaluatorException e) {
+                System.out.println("Failed to evaluate: " + e.getMessage());
+            }
+            return false;
+        }
     }
     
     public static void main(String[] args) {
 	final Scanner input = new Scanner(System.in);
-	while (input.hasNextLine()) {
-	    handleInput(input.nextLine());
-	}
+	while (input.hasNextLine() &&
+               !handleInput(input.nextLine())) {}
     }
 }
