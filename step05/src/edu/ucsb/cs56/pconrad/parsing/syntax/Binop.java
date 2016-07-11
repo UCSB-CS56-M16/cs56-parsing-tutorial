@@ -33,8 +33,9 @@ public class Binop implements AST {
     }
 
     public String toString() {
-        return ("(" + op.toString() +
-                " " + left.toString() +
-                " " + right.toString() + ")");
+	return ("(" + left.toString() +
+		" " + op.toString() +
+		" " + right.toString() +
+		")");
     }
 } // Binop

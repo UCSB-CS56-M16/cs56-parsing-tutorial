@@ -19,7 +19,7 @@ public class UnaryMinus implements AST {
     }
 
     public String toString() {
-	return "(- " + nested.toString() + ")";
+	return "-" + nested.toString();
     }
 } // UnaryMinus
 
