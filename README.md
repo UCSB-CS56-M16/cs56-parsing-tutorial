@@ -348,7 +348,7 @@ The only exeception to this is if division by zero occurs, in which case it will
 
 Now that you have read through this tutorial, your next step should probably be to read through the actual assignment that you'll be working on in this course.    Your instructor will let you know where to find it.
 
-For CS56 M16, that is here: <https://ucsb-cs56-m16.github.io/lab/lab06>
+For CS56 M16, that is here: <https://ucsb-cs56-m16.github.io/lab/lab05>
 
 If you find that the starter code for that assignment is hard to understand, it may be helpful to skim through the README.md files for each of the thirteen subdirectories, browsing through the source code as you do, so that you can see the progression from a simpler parser/interpreter to the one that you are working with.
 
